@@ -4,5 +4,7 @@ RUN apt-get install -y nginx
 RUN apt-get install -y php
 WORKDIR /var/www/html
 COPY php/ /var/www/html/
+RUN chmod 777 -R /var/lib/nginx
+RUN chmod 777 -R /var/log/nginx
 USER 1001
 CMD ["nginx", "-g", "daemon off;"]
