@@ -6,5 +6,6 @@ WORKDIR /var/www/html
 COPY php/ /var/www/html/
 RUN chmod 777 -R /var/lib/nginx
 RUN chmod 777 -R /var/log/nginx
+RUN chmod 777 -R /etc/nginx
 USER 1001
 CMD ["nginx", "-g", "daemon off;"]
